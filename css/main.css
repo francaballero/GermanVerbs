@@ -1,6 +1,6 @@
 .error-message {
     font-size: 0.85em;
-    opacity: 0.8;
+    opacity: 0.85;
     margin-top: 3px;
 }
 
@@ -17,16 +17,17 @@ form input:valid {
 
 form input.ng-invalid:not(.ng-pristine) {
     border: 1px solid red;
-   -webkit-box-shadow: 0px 0px 8px -1px rgba(255,0,0,0.6);
--moz-box-shadow: 0px 0px 8px -1px rgba(255,0,0,0.6);
-box-shadow: 0px 0px 8px -1px rgba(255,0,0,0.6);
+    -webkit-box-shadow: 0px 0px 8px -1px rgba(255, 0, 0, 0.6);
+    -moz-box-shadow: 0px 0px 8px -1px rgba(255, 0, 0, 0.6);
+    box-shadow: 0px 0px 8px -1px rgba(255, 0, 0, 0.6);
+}
+
+.form-control {
+    width: 150px;
+    margin: auto;
 }
 
 .verbcolumn {
     text-align: center;
     padding: 20px 0 30px 0;
-}
-.form-control {
-    width: 150px;
-    margin:auto;
 }

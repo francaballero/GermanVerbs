@@ -24,7 +24,9 @@ myapp.controller('myController', ['$scope',
         $scope.verbs_ = [
             ['backen', 'backte', 'gebacken', 'bake'],
             ['befehlen', 'befahl', 'befohlen', 'order'],
-            ['beginnen', 'begann', 'begonnen', 'begin']
+            ['beginnen', 'begann', 'begonnen', 'begin'],
+            ['beißen', 'biß', 'gebissen', 'bite'],
+            ['bergen', 'barg', 'geborgen', 'recover'],
         ];
         $scope.verbs = randomShuffle($scope.verbs_);
         }]);
