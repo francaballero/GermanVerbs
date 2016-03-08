@@ -1,0 +1,5 @@
+[ 
+    {"infinitiv" :"backen", "prateritum" : "backte", "partizip": "gebacken", "englisch": "bake"},
+    {"infinitiv" :"befehlen", "prateritum" : "befahl", "partizip": "befohlen", "englisch": "order"},
+    {"infinitiv" :"beginnen", "prateritum" : "begann", "partizip": "begonnen", "englisch": "begin"}
+]

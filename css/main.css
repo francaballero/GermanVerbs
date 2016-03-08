@@ -1,0 +1,32 @@
+.error-message {
+    font-size: 0.85em;
+    opacity: 0.8;
+    margin-top: 3px;
+}
+
+form h4 {
+    margin-bottom: 0;
+}
+
+form input:valid {
+    border: 1px solid rgba(0, 255, 68, 1);
+    -webkit-box-shadow: 0px 0px 8px -1px rgba(0, 255, 68, 0.6);
+    -moz-box-shadow: 0px 0px 8px -1px rgba(0, 255, 68, 0.6);
+    box-shadow: 0px 0px 8px -1px rgba(0, 255, 68, 0.6);
+}
+
+form input.ng-invalid:not(.ng-pristine) {
+    border: 1px solid red;
+   -webkit-box-shadow: 0px 0px 8px -1px rgba(255,0,0,0.6);
+-moz-box-shadow: 0px 0px 8px -1px rgba(255,0,0,0.6);
+box-shadow: 0px 0px 8px -1px rgba(255,0,0,0.6);
+}
+
+.verbcolumn {
+    text-align: center;
+    padding: 20px 0 30px 0;
+}
+.form-control {
+    width: 150px;
+    margin:auto;
+}
