@@ -140,7 +140,6 @@ form input.ng-invalid:not(.ng-pristine) {
 
 .green {
     color: #1d9f88;
-    font-size: 1.1em;
 }
 
 .form-control {
