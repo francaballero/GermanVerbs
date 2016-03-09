@@ -30,17 +30,17 @@ myapp.controller('myController', ['$scope',
         $scope.score = 0;
         $scope.addScorePrateritum = function (form) {
             if (form.prateritum.$valid) {
-                $scope.score += 1;
+                $scope.score += 15;
             }
         };
         $scope.addScorePartizip = function (form) {
             if (form.partizip.$valid) {
-                $scope.score += 1;
+                $scope.score += 15;
             }
         };
         $scope.addScoreEnglisch = function (form) {
             if (form.englisch.$valid) {
-                $scope.score += 1;
+                $scope.score += 15;
             }
         };
 

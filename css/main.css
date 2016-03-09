@@ -29,15 +29,21 @@ input {
 
 .button {
     display: inline-block;
-    padding: 8px 15px;
+    padding: 7px 12px;
     border: none;
     border-radius: 7px;
     background-color: #42dfc3;
     color: white;
-    text-align: center;
     text-decoration: none;
     font-size: .9;
     cursor: pointer;
+}
+
+button a,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
 }
 
 .button:hover {
@@ -48,8 +54,15 @@ input {
     box-shadow: 0 0 white;
 }
 
-.button:disabled {
-    background-color: red;
+.button[disable] {
+    visibility='hidden';
+}
+
+.btn-white {
+    color: black;
+    float: none;
+    background: red;
+    padding-top: -50px;
 }
 
 .container {
@@ -143,8 +156,9 @@ form input.ng-invalid:not(.ng-pristine) {
 }
 
 .form-control {
+    margin: 0;
     margin: auto;
-    width: 200px;
+    width: 100%;
 }
 
 header {
@@ -162,8 +176,13 @@ header h1 {
 
 .hr-title {
     margin-top: 0;
-    margin-bottom: -10px;
+    margin-bottom: 0px;
     width: 40%;
+}
+
+.hr-end {
+    margin-bottom: 40px;
+    width: 95%;
 }
 
 .inactive {
@@ -176,14 +195,19 @@ header h1 {
     text-align: center;
 }
 
+.navigation-side {
+    margin-top: 0px;
+    min-height: 140px;
+    clear: both;
+}
+
 .score {
-    text-align: right;
-    opacity: .5;
+    opacity: .8;
 }
 
 .special-characters {
     padding-top: 10px;
-    font-size: .9em;
+    font-size: .93em;
     opacity: .7;
 }
 
@@ -200,15 +224,23 @@ header h1 {
 
 .verb h3 {
     text-transform: uppercase;
-    margin-bottom: -25px;
+    margin-bottom: 25px;
 }
 
 .verbcolumn {
-    padding: 45px 0 20px 0;
+    padding: 10px 0 20px 0;
     text-align: center;
 }
 
 .wrapper {
     position: relative;
     min-height: 100%;
+}
+
+.btn-margin-top {
+    margin-top: 18px;
+}
+
+.btn-solution {
+    margin-left: -26px;
 }

@@ -39,61 +39,112 @@
                 <div data-ng-class="{active: activePage.page == $index, 
     inactive: activePage.page != $index}" data-ng-repeat="verb in verbs">
 
-                    <form name="form" novalidate>
-
-                        <div class="col-md-12 col-sm-12 col-xs-12 verbcolumn">
-                            <h4>{{verb[0]}}</h4>
-                            <hr class="hr-title">
-                            <!-- <input type="text" name="infinitiv" data-ng-model="infinitiv" wj-validation-error="infinitiv != verb[0] ? 'Incorrect! Try again' : ''"/>
+                    <div class="col-md-12 col-sm-12 col-xs-12 verbcolumn">
+                        <h4>{{verb[0]}}</h4>
+                        <hr class="hr-title">
+                        <!-- <input type="text" name="infinitiv" data-ng-model="infinitiv" wj-validation-error="infinitiv != verb[0] ? 'Incorrect! Try again' : ''"/>
                     <span class="error-message" data-ng-show="form.$submitted">
                         <b>Lösung: </b> {{verb[0]}}
                     </span>-->
-                        </div>
+                    </div>
 
-                        <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
-                            <input type="text" class="form-control" data-ng-model="englisch" name="englisch" data-wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Übersetzung" data-ng-blur="addScoreEnglisch(form)" data-ng-disabled="form.englisch.$valid" data-lowercase/>
-                            <span class="error-message" data-ng-show="form.$submitted">
-                        <span class="green">Lösung: </span> {{verb[3]}}
-                            </span>
-                        </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
 
-                        <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
-                            <input type="text" class="form-control" data-ng-model="prateritum" name="prateritum" data-wj-validation-error="prateritum != verb[1] ? 'Incorrect! Try again' : ''" placeholder="Präteritum" data-ng-blur="addScorePrateritum(form)" data-ng-disabled="form.prateritum.$valid" data-lowercase/>
-                            <span class="error-message" data-ng-show="form.$submitted">
-                            <span class="green">Lösung</span>: {{verb[1]}}
-                            </span>
-                        </div>
+                        <form name="englischForm" novalidate>
 
-                        <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
-                            <input type="text" class="form-control" data-ng-model="partizip" name="partizip" data-wj-validation-error="partizip != verb[2] ? 'Incorrect! Try again' : ''" placeholder="Partizip Perfekt" data-ng-blur="addScorePartizip(form)" data-ng-disabled="form.partizip.$valid" data-lowercase/>
-                            <span class="error-message" data-ng-show="form.$submitted">
-                        <span class="green">Lösung: </span> {{verb[2]}}
-                            </span>
-                        </div>
-
-                        <span class="top-buffer"></span>
-                        <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn score">
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
-                            <button type="submit" class="button" name="submit" onclick="this.style.visibility='hidden';">Lösungen</button>
-                        </div>
-                        <div class="col-md-4 col-sm-12 col-xs-12 verbcolumn score">
-                            <b>Score: </b> <span class="green"> {{score}}</span>
-                            <div class="special-characters">
-                                <b>Special characters:</b> &nbsp;
-                                <input value="ß" class="mini-input">
-                                <input value="ä" class="mini-input">
-                                <input value="ö" class="mini-input">
-                                <input value="ü" class="mini-input">
+                            <div class="col-md-2 col-sm-2 col-xs-2">
                             </div>
-                        </div>
-                        <hr>
 
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                <input type="text" class="form-control" data-ng-model="englisch" name="englisch" data-wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Übersetzung" data-ng-blur="addScoreEnglisch(englischForm)" data-ng-disabled="englischForm.englisch.$valid" data-lowercase/>
+                                <br>
+                                <span class="error-message" data-ng-show="englischForm.$submitted">
+                                    <span class="green">Lösung: </span> {{verb[3]}}
+                                </span>
+                            </div>
+
+                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';"><img src="img/solution.png" alt="?" /></button>
+                            </div>
+
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
+
+                        <form name="prateritumForm" novalidate>
+
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            </div>
+
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                <input type="text" class="form-control" data-ng-model="prateritum" name="prateritum" data-wj-validation-error="prateritum!= verb[1] ? 'Incorrect! Try again' : ''" placeholder="Präteritum" data-ng-blur="addScorePrateritum(prateritumForm)" data-ng-disabled="prateritumForm.prateritum.$valid" data-lowercase/>
+
+                                <span class="error-message" data-ng-show="prateritumForm.$submitted">
+                                    <span class="green">Lösung: </span> {{verb[1]}}
+                                </span>
+                            </div>
+
+                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';"><img src="img/solution.png" alt="?" /></button>
+                            </div>
+
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
+                        <form name="partizipForm" novalidate>
+
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            </div>
+
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                <input type="text" class="form-control" data-ng-model="partizip" name="partizip" data-wj-validation-error="partizip != verb[2] ? 'Incorrect! Try again' : ''" placeholder="Partizip Perfekt" data-ng-blur="addScorePartizip(partizipForm)" data-ng-disabled="partizipForm.partizip.$valid" data-lowercase/>
+
+                                <span class="error-message" data-ng-show="partizipForm.$submitted">
+                                    <span class="green">Lösung: </span> {{verb[2]}}
+                                </span>
+                            </div>
+
+                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';"><img src="img/solution.png" alt="?" /></button>
+                            </div>
+
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 navigation-side">
                         <ul class="pager">
-                            <li class="previous"><a data-ng-show="pages[$index - 1]" data-ng-click="activePage.page = $index-1" href="#.">Previous</a></li>
-                            <li class="next"><a data-ng-show="pages[$index + 1]" data-ng-click="activePage.page = $index+1" href="#.">Next</a> </li>
+                            <li><a data-ng-show="pages[$index + 1]" data-ng-click="activePage.page = $index+1" href="#.">Next >></a> </li>
                         </ul>
-                    </form>
+                        <ul class="pager">
+                            <li><a data-ng-show="pages[$index - 1]" data-ng-click="activePage.page = $index-1" href="#.">Previous</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12 score btn-margin-top">
+                        <b>Score: </b> <span class="green"> {{score}}</span>
+                        <div class="special-characters">
+                            <b>Special characters:</b> &nbsp;
+                            <input value="ß" class="mini-input">
+                            <input value="ä" class="mini-input">
+                            <input value="ö" class="mini-input">
+                            <input value="ü" class="mini-input">
+                        </div>
+                    </div>
+
+                    <hr class="hr-end">
                 </div>
             </div>
         </div>
