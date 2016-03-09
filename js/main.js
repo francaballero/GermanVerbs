@@ -21,6 +21,7 @@ var randomShuffle = function (array) {
 myapp.controller('myController', ['$scope',
             function ($scope) {
         $scope.chosenValue = Math.random();
+                
         $scope.verbs_ = [
             ['backen', 'backte', 'gebacken', 'bake'],
             ['befehlen', 'befahl', 'befohlen', 'order'],
@@ -29,7 +30,15 @@ myapp.controller('myController', ['$scope',
             ['bergen', 'barg', 'geborgen', 'recover'],
         ];
         $scope.verbs = randomShuffle($scope.verbs_);
+        
+        //Previous-Next navigation
+        $scope.activePage = {
+            page: 0
+        };
+        $scope.pages = $scope.verbs;
         }]);
+
+
 
 myapp.directive('wjValidationError', function () {
     return {
