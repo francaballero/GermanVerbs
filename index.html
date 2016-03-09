@@ -12,6 +12,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <script type="text/javascript">
+
+</script>
 
 </head>
 
@@ -35,7 +39,8 @@
 
                     <form name="form" novalidate>
 
-                        <div class="col-md-2 col-sm-6 col-xs-12 verbcolumn">
+                        <div class="col-md-2 col-sm-12 col-xs-12 verbcolumn">
+                            
                             <h4>{{verb[0]}}</h4>
                             <!-- <input type="text" name="infinitiv" ng-model="infinitiv" wj-validation-error="infinitiv != verb[0] ? 'Incorrect! Try again' : ''"/>
                     <span class="error-message" ng-show="form.$submitted">
@@ -43,21 +48,21 @@
                     </span>-->
                         </div>
 
-                        <div class="col-md-2 col-sm-6 col-xs-12 verbcolumn">
+                        <div class="col-md-2 col-sm-4 col-xs-12 verbcolumn">
                             <input type="text" class="form-control" ng-model="prateritum" wj-validation-error="prateritum != verb[1] ? 'Incorrect! Try again' : ''" placeholder="Präteritum" />
                             <span class="error-message" ng-show="form.$submitted">
                         <b>Lösung: </b> {{verb[1]}}
                     </span>
                         </div>
 
-                        <div class="col-md-2 col-sm-6 col-xs-12 verbcolumn">
+                        <div class="col-md-2 col-sm-4 col-xs-12 verbcolumn">
                             <input type="text" class="form-control" ng-model="partizip" wj-validation-error="partizip != verb[2] ? 'Incorrect! Try again' : ''" placeholder="Partizip Perfekt" />
                             <span class="error-message" ng-show="form.$submitted">
                         <b>Lösung: </b> {{verb[2]}}
                     </span>
                         </div>
 
-                        <div class="col-md-4 col-sm-6 col-xs-12 verbcolumn">
+                        <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
                             <input type="text" class="form-control" ng-model="englisch" wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Infinitiv" />
                             <span class="error-message" ng-show="form.$submitted">
                         <b>Lösung: </b> {{verb[3]}}
@@ -65,13 +70,13 @@
                         </div>
 
                         <div class="col-md-2 col-sm-12 col-xs-12 verbcolumn">
-                            <button type="submit" class="btn btn-success">Lösungen</button>
+                            <button type="submit" class="button" name="submit" onclick="this.style.visibility='hidden';" ondblclick="this.style.visibility='hidden';">Lösungen</button>
                         </div>
                         <hr>
 
                         <ul class="pager">
-                            <li class="previous"><a ng-show="pages[$index - 1]" ng-click="activePage.page = $index-1" href="#">Previous</a></li>
-                            <li class="next"><a ng-show="pages[$index + 1]" ng-click="activePage.page = $index+1" href="#">Next</a> </li>
+                            <li class="previous"><a ng-show="pages[$index - 1]" ng-click="activePage.page = $index-1" href="#.">Previous</a></li>
+                            <li class="next"><a ng-show="pages[$index + 1]" ng-click="activePage.page = $index+1" href="#.">Next</a> </li>
                         </ul>
                     </form>
                 </div>
