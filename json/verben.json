@@ -1,5 +1,1 @@
-[ 
-    {"infinitiv" :"backen", "prateritum" : "backte", "partizip": "gebacken", "englisch": "bake"},
-    {"infinitiv" :"befehlen", "prateritum" : "befahl", "partizip": "befohlen", "englisch": "order"},
-    {"infinitiv" :"beginnen", "prateritum" : "begann", "partizip": "begonnen", "englisch": "begin"}
-]
+['backen', 'backte', 'gebacken', 'bake'], ['befehlen', 'befahl', 'befohlen', 'order'], ['beginnen', 'begann', 'begonnen', 'begin'], ['beißen', 'biß', 'gebissen', 'bite'], ['bergen', 'barg', 'geborgen', 'recover'],

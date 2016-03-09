@@ -21,7 +21,24 @@ var randomShuffle = function (array) {
 myapp.controller('myController', ['$scope',
             function ($scope) {
         $scope.chosenValue = Math.random();
-                
+        $scope.score = 0;
+        $scope.addScorePrateritum = function (form) {
+            if (form.prateritum.$valid) {
+                $scope.score += 1;
+                document.getElementById("prateritum").disabled = true;
+            }
+        }
+        $scope.addScorePartizip = function (form) {
+            if (form.partizip.$valid) {
+                $scope.score += 1;
+            }
+        }
+        $scope.addScoreEnglisch = function (form) {
+            if (form.englisch.$valid) {
+                $scope.score += 1;
+            }
+        }
+
         $scope.verbs_ = [
             ['backen', 'backte', 'gebacken', 'bake'],
             ['befehlen', 'befahl', 'befohlen', 'order'],
@@ -30,7 +47,7 @@ myapp.controller('myController', ['$scope',
             ['bergen', 'barg', 'geborgen', 'recover'],
         ];
         $scope.verbs = randomShuffle($scope.verbs_);
-        
+
         //Previous-Next navigation
         $scope.activePage = {
             page: 0
