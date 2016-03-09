@@ -53,21 +53,21 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
                             <input type="text" class="form-control" data-ng-model="prateritum" name="prateritum" data-wj-validation-error="prateritum != verb[1] ? 'Incorrect! Try again' : ''" placeholder="Präteritum" data-ng-blur="addScorePrateritum(form)" data-ng-disabled="form.prateritum.$valid" data-lowercase/>
                             <span class="error-message" data-ng-show="form.$submitted">
-                            <span class="losung">Lösung</span>: {{verb[1]}}
+                            <span class="green">Lösung</span>: {{verb[1]}}
                             </span>
                         </div>
 
                         <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
                             <input type="text" class="form-control" data-ng-model="partizip" name="partizip" data-wj-validation-error="partizip != verb[2] ? 'Incorrect! Try again' : ''" placeholder="Partizip Perfekt" data-ng-blur="addScorePartizip(form)" data-ng-disabled="form.partizip.$valid" data-lowercase/>
                             <span class="error-message" data-ng-show="form.$submitted">
-                        <span class="losung">Lösung: </span> {{verb[2]}}
+                        <span class="green">Lösung: </span> {{verb[2]}}
                             </span>
                         </div>
 
                         <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
                             <input type="text" class="form-control" data-ng-model="englisch" name="englisch" data-wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Übersetzung" data-ng-blur="addScoreEnglisch(form)" data-ng-disabled="form.englisch.$valid" data-lowercase/>
                             <span class="error-message" data-ng-show="form.$submitted">
-                        <span class="losung">Lösung: </span> {{verb[3]}}
+                        <span class="green">Lösung: </span> {{verb[3]}}
                             </span>
                         </div>
                         <span class="top-buffer"></span>
@@ -77,7 +77,7 @@
                             <button type="submit" class="button" name="submit" onclick="this.style.visibility='hidden';">Lösungen</button>
                         </div>
                         <div class="col-md-4 col-sm-12 col-xs-12 verbcolumn score">
-                            <b>Score: </b> {{score}}
+                            <b>Score: </b> <span class="green"> {{score}}</span>
                             <div class="special-characters">
                                 <b>Special characters:</b> &nbsp;
                                 <input value="ß" class="mini-input">

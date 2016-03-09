@@ -138,6 +138,11 @@ form input.ng-invalid:not(.ng-pristine) {
     box-shadow: 0px 0px 8px -1px rgba(255, 0, 0, 0.6);
 }
 
+.green {
+    color: #1d9f88;
+    font-size: 1.1em;
+}
+
 .form-control {
     margin: auto;
     width: 200px;
@@ -172,11 +177,6 @@ a:active {
 
 .inactive {
     display: none;
-}
-
-.losung {
-    color: #1d9f88;
-    font-size: 1.1em;
 }
 
 .mini-input {
