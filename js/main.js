@@ -1,31 +1,29 @@
 var myapp = angular.module('myApp', []);
 
-var randomShuffle = function (array) {
-    var m = array.length,
-        t, i;
-
-    // While there remain elements to shuffle
-    while (m) {
-        // Pick a remaining element…
-        i = Math.floor(Math.random() * m--);
-
-        // And swap it with the current element.
-        t = array[m];
-        array[m] = array[i];
-        array[i] = t;
-    }
-    return array;
-}
-
 
 myapp.controller('myController', ['$scope',
             function ($scope) {
-        $scope.chosenValue = Math.random();
+        $scope.randomShuffle = function (array) {
+            var m = array.length,
+                t, i;
+
+            // While there remain elements to shuffle
+            while (m) {
+                // Pick a remaining element…
+                i = Math.floor(Math.random() * m--);
+
+                // And swap it with the current element.
+                t = array[m];
+                array[m] = array[i];
+                array[i] = t;
+            }
+            return array;
+        }
+
         $scope.score = 0;
         $scope.addScorePrateritum = function (form) {
             if (form.prateritum.$valid) {
                 $scope.score += 1;
-                document.getElementById("prateritum").disabled = true;
             }
         }
         $scope.addScorePartizip = function (form) {
@@ -46,15 +44,14 @@ myapp.controller('myController', ['$scope',
             ['beißen', 'biß', 'gebissen', 'bite'],
             ['bergen', 'barg', 'geborgen', 'recover'],
         ];
-        $scope.verbs = randomShuffle($scope.verbs_);
+        $scope.verbs = $scope.randomShuffle($scope.verbs_);
 
         //Previous-Next navigation
         $scope.activePage = {
             page: 0
         };
         $scope.pages = $scope.verbs;
-        }]);
-
+}]);
 
 
 myapp.directive('wjValidationError', function () {
@@ -65,6 +62,25 @@ myapp.directive('wjValidationError', function () {
                 elm[0].setCustomValidity(errorMsg);
                 ctl.$setValidity('wjValidationError', errorMsg ? false : true);
             });
+        }
+    };
+});
+
+myapp.directive('lowercase', function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, element, attrs, modelCtrl) {
+            var lowercase = function (inputValue) {
+                if (inputValue == undefined) inputValue = '';
+                var lowercase = inputValue.toLowerCase();
+                if (lowercase !== inputValue) {
+                    modelCtrl.$setViewValue(lowercase);
+                    modelCtrl.$render();
+                }
+                return lowercase;
+            }
+            modelCtrl.$parsers.push(lowercase);
+            lowercase(scope[attrs.ngModel]); // lowercase initial value
         }
     };
 });

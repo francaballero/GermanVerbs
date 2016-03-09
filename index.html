@@ -47,21 +47,21 @@
                         </div>
 
                         <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
-                            <input type="text" class="form-control" ng-model="prateritum" name="prateritum" wj-validation-error="prateritum != verb[1] ? 'Incorrect! Try again' : ''" placeholder="Präteritum" ng-blur="addScorePrateritum(form)" ng-disabled="form.prateritum.$valid" />
+                            <input type="text" class="form-control" ng-model="prateritum" name="prateritum" wj-validation-error="prateritum != verb[1] ? 'Incorrect! Try again' : ''" placeholder="Präteritum" ng-blur="addScorePrateritum(form)" ng-disabled="form.prateritum.$valid" lowercase/>
                             <span class="error-message" ng-show="form.$submitted">
                         <b>Lösung: </b> {{verb[1]}}
                     </span>
                         </div>
 
                         <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
-                            <input type="text" class="form-control" ng-model="partizip" name="partizip" wj-validation-error="partizip != verb[2] ? 'Incorrect! Try again' : ''" placeholder="Partizip Perfekt" ng-blur="addScorePartizip(form)" ng-disabled="form.partizip.$valid" />
+                            <input type="text" class="form-control" ng-model="partizip" name="partizip" wj-validation-error="partizip != verb[2] ? 'Incorrect! Try again' : ''" placeholder="Partizip Perfekt" ng-blur="addScorePartizip(form)" ng-disabled="form.partizip.$valid" lowercase/>
                             <span class="error-message" ng-show="form.$submitted">
                         <b>Lösung: </b> {{verb[2]}}
                     </span>
                         </div>
 
                         <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
-                            <input type="text" class="form-control" ng-model="englisch" name="englisch" wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Infinitiv" ng-blur="addScoreEnglisch(form)" ng-disabled="form.englisch.$valid" />
+                            <input type="text" class="form-control" ng-model="englisch" name="englisch" wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Infinitiv" ng-blur="addScoreEnglisch(form)" ng-disabled="form.englisch.$valid" lowercase/>
                             <span class="error-message" ng-show="form.$submitted">
                         <b>Lösung: </b> {{verb[3]}}
                     </span>
