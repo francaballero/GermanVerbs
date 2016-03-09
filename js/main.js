@@ -1,5 +1,6 @@
-var myapp = angular.module('myApp', []);
+/*global angular: true */
 
+var myapp = angular.module('myApp', []);
 
 myapp.controller('myController', ['$scope',
             function ($scope) {
@@ -18,31 +19,29 @@ myapp.controller('myController', ['$scope',
                 array[i] = t;
             }
             return array;
-        }
+        };
 
         $scope.start = false;
         $scope.startFunction = function () {
-            console.log("Eh");
             $scope.start = true;
-            console.log("Ehhh");
-        }
+        };
 
         $scope.score = 0;
         $scope.addScorePrateritum = function (form) {
             if (form.prateritum.$valid) {
                 $scope.score += 1;
             }
-        }
+        };
         $scope.addScorePartizip = function (form) {
             if (form.partizip.$valid) {
                 $scope.score += 1;
             }
-        }
+        };
         $scope.addScoreEnglisch = function (form) {
             if (form.englisch.$valid) {
                 $scope.score += 1;
             }
-        }
+        };
 
         $scope.verbs_ = [
             ['backen', 'backte', 'gebacken', 'bake'],
@@ -65,7 +64,7 @@ myapp.directive('wjValidationError', function () {
     return {
         require: 'ngModel',
         link: function (scope, elm, attrs, ctl) {
-            scope.$watch(attrs['wjValidationError'], function (errorMsg) {
+            scope.$watch(attrs.wjValidationError, function (errorMsg) {
                 elm[0].setCustomValidity(errorMsg);
                 ctl.$setValidity('wjValidationError', errorMsg ? false : true);
             });
@@ -73,19 +72,20 @@ myapp.directive('wjValidationError', function () {
     };
 });
 
+
 myapp.directive('lowercase', function () {
     return {
         require: 'ngModel',
         link: function (scope, element, attrs, modelCtrl) {
             var lowercase = function (inputValue) {
-                if (inputValue == undefined) inputValue = '';
+                if (inputValue === undefined) inputValue = '';
                 var lowercase = inputValue.toLowerCase();
                 if (lowercase !== inputValue) {
                     modelCtrl.$setViewValue(lowercase);
                     modelCtrl.$render();
                 }
                 return lowercase;
-            }
+            };
             modelCtrl.$parsers.push(lowercase);
             lowercase(scope[attrs.ngModel]); // lowercase initial value
         }
