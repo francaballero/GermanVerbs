@@ -91,6 +91,10 @@ footer ul {
     list-style-type: none;
 }
 
+footer a {
+    font-weight: 400;
+}
+
 footer a:link {
     color: dimgray;
     text-decoration: none;

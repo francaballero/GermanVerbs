@@ -8,12 +8,8 @@ myapp.controller('myController', ['$scope',
             var m = array.length,
                 t, i;
 
-            // While there remain elements to shuffle
             while (m) {
-                // Pick a remaining element…
                 i = Math.floor(Math.random() * m--);
-
-                // And swap it with the current element.
                 t = array[m];
                 array[m] = array[i];
                 array[i] = t;
@@ -87,7 +83,7 @@ myapp.directive('lowercase', function () {
                 return lowercase;
             };
             modelCtrl.$parsers.push(lowercase);
-            lowercase(scope[attrs.ngModel]); // lowercase initial value
+            lowercase(scope[attrs.ngModel]);
         }
     };
 });
