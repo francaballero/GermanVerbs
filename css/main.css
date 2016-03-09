@@ -160,14 +160,6 @@ header h1 {
     text-decoration: none;
 }
 
-header a:link,
-a:visited,
-a:hover,
-a:active {
-    color: black;
-    text-decoration: none;
-}
-
 .hr-title {
     margin-top: 0;
     margin-bottom: -10px;

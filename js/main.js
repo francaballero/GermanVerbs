@@ -21,6 +21,11 @@ myapp.controller('myController', ['$scope',
         $scope.startFunction = function () {
             $scope.start = true;
         };
+        $scope.home = function () {
+            if ($scope.start === true) {
+                $scope.start = false;
+            }
+        };
 
         $scope.score = 0;
         $scope.addScorePrateritum = function (form) {

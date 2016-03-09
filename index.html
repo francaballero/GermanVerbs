@@ -20,10 +20,10 @@
     <div class="wrapper">
 
         <header>
-            <a href="index.html">
+            <div data-ng-click="home()">
                 <h1>Lernen Verben auf Deutsch!</h1>
                 <p>Learning platform for the study of German verbs</p>
-            </a>
+            </div>
         </header>
 
         <div class="container">
@@ -51,6 +51,13 @@
                         </div>
 
                         <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
+                            <input type="text" class="form-control" data-ng-model="englisch" name="englisch" data-wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Übersetzung" data-ng-blur="addScoreEnglisch(form)" data-ng-disabled="form.englisch.$valid" data-lowercase/>
+                            <span class="error-message" data-ng-show="form.$submitted">
+                        <span class="green">Lösung: </span> {{verb[3]}}
+                            </span>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
                             <input type="text" class="form-control" data-ng-model="prateritum" name="prateritum" data-wj-validation-error="prateritum != verb[1] ? 'Incorrect! Try again' : ''" placeholder="Präteritum" data-ng-blur="addScorePrateritum(form)" data-ng-disabled="form.prateritum.$valid" data-lowercase/>
                             <span class="error-message" data-ng-show="form.$submitted">
                             <span class="green">Lösung</span>: {{verb[1]}}
@@ -64,12 +71,6 @@
                             </span>
                         </div>
 
-                        <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
-                            <input type="text" class="form-control" data-ng-model="englisch" name="englisch" data-wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Übersetzung" data-ng-blur="addScoreEnglisch(form)" data-ng-disabled="form.englisch.$valid" data-lowercase/>
-                            <span class="error-message" data-ng-show="form.$submitted">
-                        <span class="green">Lösung: </span> {{verb[3]}}
-                            </span>
-                        </div>
                         <span class="top-buffer"></span>
                         <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn score">
                         </div>
