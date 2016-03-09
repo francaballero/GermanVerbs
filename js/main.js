@@ -20,6 +20,13 @@ myapp.controller('myController', ['$scope',
             return array;
         }
 
+        $scope.start = false;
+        $scope.startFunction = function () {
+            console.log("Eh");
+            $scope.start = true;
+            console.log("Ehhh");
+        }
+
         $scope.score = 0;
         $scope.addScorePrateritum = function (form) {
             if (form.prateritum.$valid) {

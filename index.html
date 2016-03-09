@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="css/main.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <script src="js/main.min.js"></script>
-    <script src="js/clipboard.min.js"></script>
+    <script src="js/main.js"></script>
 
 </head>
 
@@ -21,13 +20,20 @@
     <div class="wrapper">
 
         <header>
-            <h1>Lernen Verben auf Deutsch!</h1>
-            <p>Learning platform for the study of German verbs</p>
+            <a href="index.html">
+                <h1>Lernen Verben auf Deutsch!</h1>
+                <p>Learning platform for the study of German verbs</p>
+            </a>
         </header>
 
         <div class="container">
 
-            <div class="verb">
+            <div class="description" ng-show="!start">
+                <h4>Learn the german verbs by writing the past tense, the participle and the translation of given verbs!</h4>
+                <button class="button" name="start" ng-click="startFunction()">Start</button>
+            </div>
+
+            <div class="verb" ng-show="start">
                 <h3>Fülle die Lücken aus!</h3>
 
                 <div ng-class="{active: activePage.page == $index, 
@@ -59,7 +65,7 @@
                         </div>
 
                         <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
-                            <input type="text" class="form-control" ng-model="englisch" name="englisch" wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Infinitiv" ng-blur="addScoreEnglisch(form)" ng-disabled="form.englisch.$valid" lowercase/>
+                            <input type="text" class="form-control" ng-model="englisch" name="englisch" wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Übersetzung" ng-blur="addScoreEnglisch(form)" ng-disabled="form.englisch.$valid" lowercase/>
                             <span class="error-message" ng-show="form.$submitted">
                         <span class="losung">Lösung: </span> {{verb[3]}}
                             </span>
