@@ -223,7 +223,6 @@ header h1 {
 }
 
 .verb h3 {
-    text-transform: uppercase;
     margin-bottom: 25px;
 }
 
@@ -243,4 +242,8 @@ header h1 {
 
 .btn-solution {
     margin-left: -26px;
+}
+
+.verbs_row {
+    height: 90px;
 }

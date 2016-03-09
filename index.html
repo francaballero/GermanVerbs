@@ -48,7 +48,7 @@
                     </span>-->
                     </div>
 
-                    <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
+                    <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn verbs_row">
 
                         <form name="englischForm" novalidate>
 
@@ -57,14 +57,14 @@
 
                             <div class="col-md-7 col-sm-7 col-xs-7">
                                 <input type="text" class="form-control" data-ng-model="englisch" name="englisch" data-wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Übersetzung" data-ng-blur="addScoreEnglisch(englischForm)" data-ng-disabled="englischForm.englisch.$valid" data-lowercase/>
-                                <br>
+
                                 <span class="error-message" data-ng-show="englischForm.$submitted">
                                     <span class="green">Lösung: </span> {{verb[3]}}
                                 </span>
                             </div>
 
                             <div class="col-md-1 col-sm-1 col-xs-1">
-                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';"><img src="img/solution.png" alt="?" /></button>
+                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';" data-ng-click="substractScore()" tabindex=-1><img src="img/solution.png" alt="?" /></button>
                             </div>
 
                             <div class="col-md-2 col-sm-2 col-xs-2">
@@ -74,7 +74,7 @@
 
                     </div>
 
-                    <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
+                    <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn verbs_row">
 
                         <form name="prateritumForm" novalidate>
 
@@ -90,7 +90,7 @@
                             </div>
 
                             <div class="col-md-1 col-sm-1 col-xs-1">
-                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';"><img src="img/solution.png" alt="?" /></button>
+                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';" data-ng-click="substractScore()"><img src="img/solution.png" alt="?" /></button>
                             </div>
 
                             <div class="col-md-2 col-sm-2 col-xs-2">
@@ -99,7 +99,7 @@
                         </form>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn">
+                    <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn verbs_row">
                         <form name="partizipForm" novalidate>
 
                             <div class="col-md-2 col-sm-2 col-xs-2">
@@ -114,7 +114,7 @@
                             </div>
 
                             <div class="col-md-1 col-sm-1 col-xs-1">
-                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';"><img src="img/solution.png" alt="?" /></button>
+                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';" data-ng-click="substractScore()"><img src="img/solution.png" alt="?" /></button>
                             </div>
 
                             <div class="col-md-2 col-sm-2 col-xs-2">
@@ -134,7 +134,7 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                     </div>
                     <div class="col-md-4 col-sm-12 col-xs-12 score btn-margin-top">
-                        <b>Score: </b> <span class="green"> {{score}}</span>
+                        <b>Score: </b> <span ng-style="customStyle.style"> {{score}}</span>
                         <div class="special-characters">
                             <b>Special characters:</b> &nbsp;
                             <input value="ß" class="mini-input">

@@ -27,21 +27,37 @@ myapp.controller('myController', ['$scope',
             }
         };
 
+        $scope.customStyle = {};
         $scope.score = 0;
         $scope.addScorePrateritum = function (form) {
             if (form.prateritum.$valid) {
                 $scope.score += 15;
+                $scope.customStyle.style = {
+                    "color": "#1d9f88"
+                };
             }
         };
         $scope.addScorePartizip = function (form) {
             if (form.partizip.$valid) {
                 $scope.score += 15;
+                $scope.customStyle.style = {
+                    "color": "#1d9f88"
+                };
             }
         };
         $scope.addScoreEnglisch = function (form) {
             if (form.englisch.$valid) {
                 $scope.score += 15;
+                $scope.customStyle.style = {
+                    "color": "#1d9f88"
+                };
             }
+        };
+        $scope.substractScore = function () {
+            $scope.score -= 20;
+            $scope.customStyle.style = {
+                "color": "red"
+            };
         };
 
         $scope.verbs_ = [
