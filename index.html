@@ -34,13 +34,13 @@
             </div>
 
             <div class="verb" data-ng-show="start">
-                <h3>Fülle die Lücken aus!</h3>
+                <h4>Fülle die Lücken aus!</h4>
 
                 <div data-ng-class="{active: activePage.page == $index, 
     inactive: activePage.page != $index}" data-ng-repeat="verb in verbs">
 
                     <div class="col-md-12 col-sm-12 col-xs-12 verbcolumn">
-                        <h4>{{verb[0]}}</h4>
+                        <h3>{{verb[0]}}</h3>
                         <hr class="hr-title">
                         <!-- <input type="text" name="infinitiv" data-ng-model="infinitiv" wj-validation-error="infinitiv != verb[0] ? 'Incorrect! Try again' : ''"/>
                     <span class="error-message" data-ng-show="form.$submitted">
@@ -90,7 +90,7 @@
                             </div>
 
                             <div class="col-md-1 col-sm-1 col-xs-1">
-                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';" data-ng-click="substractScore()"><img src="img/solution.png" alt="?" /></button>
+                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';" data-ng-click="substractScore()" tabindex=-1><img src="img/solution.png" alt="?" /></button>
                             </div>
 
                             <div class="col-md-2 col-sm-2 col-xs-2">
@@ -114,7 +114,7 @@
                             </div>
 
                             <div class="col-md-1 col-sm-1 col-xs-1">
-                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';" data-ng-click="substractScore()"><img src="img/solution.png" alt="?" /></button>
+                                <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';" data-ng-click="substractScore()" tabindex=-1><img src="img/solution.png" alt="?" /></button>
                             </div>
 
                             <div class="col-md-2 col-sm-2 col-xs-2">
@@ -133,7 +133,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
                     </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 score btn-margin-top">
+                    <div class="col-md-4 col-sm-12 col-xs-12 score btn-margin-top" tabindex=-1>
                         <b>Score: </b> <span ng-style="customStyle.style"> {{score}}</span>
                         <div class="special-characters">
                             <b>Special characters:</b> &nbsp;
