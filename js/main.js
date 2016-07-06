@@ -64,7 +64,7 @@ myapp.controller('myController', ['$scope',
             ['backen', 'backte', 'gebacken', 'bake'],
             ['befehlen', 'befahl', 'befohlen', 'order'],
             ['beginnen', 'begann', 'begonnen', 'begin'],
-            ['beißen', 'biß', 'gebissen', 'bite'],
+            ['beißen', 'biss', 'gebissen', 'bite'],
             ['bergen', 'barg', 'geborgen', 'recover'],
         ];
         $scope.verbs = $scope.randomShuffle($scope.verbs_);
@@ -85,6 +85,18 @@ myapp.directive('wjValidationError', function () {
                 elm[0].setCustomValidity(errorMsg);
                 ctl.$setValidity('wjValidationError', errorMsg ? false : true);
             });
+        }
+    };
+});
+
+myapp.directive('replaceSS', function () {
+
+    return {
+        require: 'ngModel',
+        link: function (scope, elm, attrs, ctl) {
+            console.log(elm);
+            console.log(elm.replace('ß', 'ss'));
+            return elm.replace('ß', 'ss');
         }
     };
 });

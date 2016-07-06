@@ -17,20 +17,26 @@
 
 <body data-ng-controller="myController">
 
+    <!-- This div prevents showing information before angularjs is totally rendered in the HTML DOM -->
+    <div data-ng-show="false" style="width: 100%; height: 100%;"></div>
+    <!-- -->
+
     <div class="wrapper">
 
         <header>
             <div data-ng-click="home()">
-                <h1>Lernen Verben auf Deutsch!</h1>
-                <p>Learning platform for the study of German verbs</p>
+                <h1>Lernen Verben auf <span class="german">Deutsch</span>!</h1>
+                <h5>Learning platform for the study of German verbs</h5>
             </div>
         </header>
 
+
         <div class="container">
+
 
             <div class="description" data-ng-show="!start">
                 <h4>Learn the german verbs by writing the past tense, the participle and the translation of given verbs!</h4>
-                <button class="button" name="start" data-ng-click="startFunction()">Start</button>
+                <button class="button btn-big" name="start" data-ng-click="startFunction()">Start</button>
             </div>
 
             <div class="verb" data-ng-show="start">
@@ -52,10 +58,10 @@
 
                         <form name="englischForm" novalidate>
 
-                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            <div class="col-md-2 col-sm-2 col-xs-1">
                             </div>
 
-                            <div class="col-md-7 col-sm-7 col-xs-7">
+                            <div class="col-md-7 col-sm-7 col-xs-8">
                                 <input type="text" class="form-control" data-ng-model="englisch" name="englisch" data-wj-validation-error="englisch != verb[3] ? 'Incorrect! Try again' : ''" placeholder="Englisch Übersetzung" data-ng-blur="addScoreEnglisch(englischForm)" data-ng-disabled="englischForm.englisch.$valid" data-lowercase/>
 
                                 <span class="error-message" data-ng-show="englischForm.$submitted">
@@ -63,11 +69,11 @@
                                 </span>
                             </div>
 
-                            <div class="col-md-1 col-sm-1 col-xs-1">
+                            <div class="col-md-1 col-sm-1 col-xs-2">
                                 <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';" data-ng-click="substractScore()" tabindex=-1><img src="img/solution.png" alt="?" /></button>
                             </div>
 
-                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            <div class="col-md-2 col-sm-2 col-xs-0">
                             </div>
 
                         </form>
@@ -78,22 +84,22 @@
 
                         <form name="prateritumForm" novalidate>
 
-                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            <div class="col-md-2 col-sm-2 col-xs-1">
                             </div>
 
-                            <div class="col-md-7 col-sm-7 col-xs-7">
-                                <input type="text" class="form-control" data-ng-model="prateritum" name="prateritum" data-wj-validation-error="prateritum!= verb[1] ? 'Incorrect! Try again' : ''" placeholder="Präteritum" data-ng-blur="addScorePrateritum(prateritumForm)" data-ng-disabled="prateritumForm.prateritum.$valid" data-lowercase/>
+                            <div class="col-md-7 col-sm-7 col-xs-8">
+                                <input type="text" class="form-control" data-ng-model="prateritum" name="prateritum" data-wj-validation-error="prateritum!= verb[1] ? 'Incorrect! Try again' : ''" placeholder="Präteritum" data-ng-blur="addScorePrateritum(prateritumForm)" data-ng-disabled="prateritumForm.prateritum.$valid" data-lowercase data-replaceSS/>
 
                                 <span class="error-message" data-ng-show="prateritumForm.$submitted">
                                     <span class="green">Lösung: </span> {{verb[1]}}
                                 </span>
                             </div>
 
-                            <div class="col-md-1 col-sm-1 col-xs-1">
+                            <div class="col-md-1 col-sm-1 col-xs-2">
                                 <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';" data-ng-click="substractScore()" tabindex=-1><img src="img/solution.png" alt="?" /></button>
                             </div>
 
-                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            <div class="col-md-2 col-sm-2 col-xs-0">
                             </div>
 
                         </form>
@@ -102,10 +108,10 @@
                     <div class="col-md-4 col-sm-4 col-xs-12 verbcolumn verbs_row">
                         <form name="partizipForm" novalidate>
 
-                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            <div class="col-md-2 col-sm-2 col-xs-1">
                             </div>
 
-                            <div class="col-md-7 col-sm-7 col-xs-7">
+                            <div class="col-md-7 col-sm-7 col-xs-8">
                                 <input type="text" class="form-control" data-ng-model="partizip" name="partizip" data-wj-validation-error="partizip != verb[2] ? 'Incorrect! Try again' : ''" placeholder="Partizip Perfekt" data-ng-blur="addScorePartizip(partizipForm)" data-ng-disabled="partizipForm.partizip.$valid" data-lowercase/>
 
                                 <span class="error-message" data-ng-show="partizipForm.$submitted">
@@ -113,17 +119,17 @@
                                 </span>
                             </div>
 
-                            <div class="col-md-1 col-sm-1 col-xs-1">
+                            <div class="col-md-1 col-sm-1 col-xs-2">
                                 <button type="submit" class="button btn-solution" name="submit" onclick="this.style.visibility='hidden';" data-ng-click="substractScore()" tabindex=-1><img src="img/solution.png" alt="?" /></button>
                             </div>
 
-                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            <div class="col-md-2 col-sm-2 col-xs-0">
                             </div>
 
                         </form>
                     </div>
 
-                    <div class="col-md-4 col-sm-4 col-xs-12 navigation-side">
+                    <div class="col-md-4 col-sm-4 col-xs-12 navigation-side" tabindex=1>
                         <ul class="pager">
                             <li><a data-ng-show="pages[$index + 1]" data-ng-click="activePage.page = $index+1" href="#.">Next >></a> </li>
                         </ul>
@@ -131,10 +137,10 @@
                             <li><a data-ng-show="pages[$index - 1]" data-ng-click="activePage.page = $index-1" href="#.">Previous</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="col-md-4 col-sm-3 col-xs-12">
                     </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 score btn-margin-top" tabindex=-1>
-                        <b>Score: </b> <span ng-style="customStyle.style"> {{score}}</span>
+                    <div class="col-md-4 col-sm-5 col-xs-12 score btn-margin-top" tabindex=-1>
+                        Score: <span ng-style="customStyle.style" class="score-number"> {{score}}</span>
                         <div class="special-characters">
                             <b>Special characters:</b> &nbsp;
                             <input value="ß" class="mini-input">
